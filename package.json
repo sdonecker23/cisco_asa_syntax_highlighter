@@ -1,0 +1,35 @@
+{
+    "name": "vscode-cisco-asa-syntax-highlighter",
+    "displayName": "VS Code - Cisco ASA Syntax Highlighter",
+    "description": "Cisco ASA syntax highlighter extension for VS Code.",
+    "version": "1.0.0",
+    "publisher": "sdonecker23",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.26.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://https://github.com/sdonecker23/vscode_cisco_asa_syntax_highlighter.git"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "cisco_asa",
+                "extensions": [ ".cisco_asa", ".asa" ],
+                "aliases": [ "Cisco ASA", "ASA", "asa" ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "cisco_asa",
+                "scopeName": "text.cisco_asa",
+                "path": "./syntaxes/cisco_asa.tmLanguage.json"
+            }
+        ]
+    }
+}

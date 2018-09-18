@@ -1,0 +1,24 @@
+{
+    "comments": {
+        // Symbols used for single line comments. Remove this entry if your language does not support line comments.
+        "lineComment": "!"
+    },
+    // Symbols that are auto closed when typing.
+    "autoClosingPairs": [
+        ["^C", "^C"],
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ],
+    // Symbols that can be used to surround a selection.
+    "surroundingPairs": [
+        ["^C", "^C"],
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ]
+}

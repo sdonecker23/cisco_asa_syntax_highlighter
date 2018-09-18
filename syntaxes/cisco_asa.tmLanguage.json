@@ -1,0 +1,498 @@
+{ 
+	"name": "Cisco_ASA",
+ 	"scopeName": "text.cisco_asa",
+	"fileTypes": ["cisco_asa", "asa"],
+	"foldingStartMarker": ["\\{\\s*$"],
+	"foldingStopMarker": ["^\\s*\\}"],
+	"patterns": [
+
+		{ 
+			"match": "(?<=^)\\s*no .*$",
+			"name": "invalid.illegal.cisco_asa"
+		},
+		{ 
+			"match": "(any|deny|inactive|ip)(?=\\s+)",
+		  	"name": "invalid.illegal.cisco_asa"
+		},
+		{ 
+			"match": "(permit)(?=\\s+)",
+		  	"name": "support.class.cisco_asa"
+		},
+		{ 
+			"match": "(\\s+)(dynamic|static)(?=\\s+)",
+		  	"name": "support.class.cisco_asa"
+		},
+		{ 
+			"match": "(\\s+)(in|out)(?=\\s+)",
+		  	"name": "support.class.cisco_asa"
+		},
+		{ 
+			"match": "^[\\s]*!(.*)",
+		  	"name": "comment.cisco_asa"
+		},
+		{ 
+			"match": "(?<=motd)(.*)",
+		  	"name": "diabled"
+		},
+
+		{ 
+			"match": "^(aaa|aaa-server|access-group|access-list|asdm|banner|boot|ca|clear|clock|cluster|compression|configure|console|crypto|ddns|dhcp-client|dhcpd|dhcprelay|dns|dns-group|dns-guard|domain-name|enable|end|established|event|exit|failover|filter|fips|firewall|fixup|flow-export|forward-reference|fragment|ftp|ftp-map|group-delimiter|group-policy|gtp-map|h225-map|hostname|http|http-map|icmp|interface|ipsec|ipv6|isakmp|jumbo-frame|key|l2tp|lacp|ldap|logging|logout|mac-address|mac-address-table|mac-learn|mac-list|management-access|map|memory|memory-utilization|mgcp-map|migrate|mode|monitor-interface|mount|mroute|mtu|multicast-routing|name|names|nat|net|ntp|nve|object|object-group|object-group-search|pager|passwd|password|password-policy|pim|policy-list|policy-map|prefix-list|priority-queue|privilege|prompt|quit|quota|regex|remote-access|rest-api|route|route-map|router|same-security-traffic|scansafe|service|service-policy|setup|sla|smtp-server|snmp|snmp-map|snmp-server|ssh|ssl|sunrpc-server|sysopt|tcp-map|telnet|terminal|tftp-server|threat-detection|time-range|timeout|tls-proxy|track|tunnel-group|tunnel-group-map|url-block|url-cache|url-server|user-identity|username|virtual|vpdn|vpn|vpn-addr-assign|vpn-sessiondb|vpnsetup|vxlan|wccp|webvpn|xlate|zone|zonelabs-integrity)(?=\\s+)",
+		  	"name": "support.type.property-name.cisco_asa"
+		},
+		
+		{ 
+			"match": "(?<=^aaa)(\\s+)(accounting|authentication|authorization|local|mac-exempt|proxy-limit)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^asdm)(\\s+)(group|history|image|location)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^banner)(\\s+)(asdm|exec|login|motd)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^boot)(\\s+)(config|system)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ca)(\\s+)(authenticate|configure|crl|enroll|generate|global|identity|interface|save|subject-name|verifycertdn|zeroize)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^clear)(\\s+)(configure)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^clock)(\\s+)(summer-time|timezone)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^cluster)(\\s+)(group|interface-mode|replication)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^compression)(\\s+)(all|anyconnect-ssl|http-comp)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^configure)(\\s+)(factory-default|interface|memory|net)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^console)(\\s+)(timeout)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^crypto)(\\s+)(ca|dynamic-map|ikev1|ikev2|ipsec|isakmp|key|map)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ddns)(\\s+)(update)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^dhcp-client)(\\s+)(broadcast-flag|client-id|update)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^dhcpd)(\\s+)(address|auto-config|dns|domain|enable|lease|option|ping_timeout|update|wins)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^dhcprelay)(\\s+)(enable|information|server|setroute|timeout)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^dns)(\\s+)(domain-lookup|expire-entry-timer|name-server|poll-timer|retries|server-group|timeout)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^enable)(\\s+)(password)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^established)(\\s+)(tcp|udp)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^event)(\\s+)(manager)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^failover)(\\s+)(health-check|interface|interface-policy|ipsec|key|lan|link|mac|mac-notification|polltime|replication|standby|timeout)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^filter)(\\s+)(activex|ftp|https|java|url)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^fips)(\\s+)(enable)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^firewall)(\\s+)(transparent)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^fixup)(\\s+)(protocol)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^flow-export)(\\s+)(active|delay|destination|enable|template)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^forward-reference)(\\s+)(enable)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^fragment)(\\s+)(chain|reassembly|size|timeout)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ftp)(\\s+)(mode)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^group-delimiter)(\\s+)(!|#|@)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^http)(\\s+)(authentication-certificate|redirect|server|username-from-certificate)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^icmp)(\\s+)(unreachable)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^interface)(\\s+)(BVI|GigabitEthernet|Management|Port-channel|Redundant|Tunnel|vni)(?=\\s*)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ip)(\\s+)(audit|local|verify)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ipsec)(\\s+)(df-bit|fragmentation|ikev1|ikev2|inner-routing-lookup|profile|security-association)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ipv6)(\\s+)(dhcp|dhcprelay|enforce-eui64|icmp|local|neighbor|ospf|prefix-list|route|router)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^isakmp)(\\s+)(disconnect-notify|identity|nat-traversal|reload-wait)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^jumbo-frame)(\\s+)(reservation)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^key)(\\s+)(configure-key)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^l2tp)(\\s+)(tunnel)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^lacp)(\\s+)(system-priority)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ldap)(\\s+)(attribute-map)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^logging)(\\s+)(asdm|asdm-buffer-size|buffer-size|buffered|class|console|device-id|emblem|enable|facility|flash-bufferwrap|flash-maximum-allocation|flash-minimum-free|flow-export-syslogs|from-address|ftp-bufferwrap|ftp-server|hide|history|host|list|mail|message|monitor|permit-hostdown|queue|rate-limit|recipient-address|standby|timestamp|trap)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^mac-address)(\\s+)(pool)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^mac-address-table)(\\s+)(aging-time|static)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^mac-learn)(\\s+)(flood)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^memory)(\\s+)(heap-trimming)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^memory-utilization)(\\s+)(reload-threshold)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^migrate)(\\s+)(l2l|overwrite|remote-access)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^mode)(\\s+)(multiple|noconfirm|single)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^nat)(\\s+)(after-auto|source)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^net)(\\s+)(local)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ntp)(\\s+)(authenticate|authentication-key|server|trusted-key)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^object)(\\s+)(network|service)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^object-group)(\\s+)(icmp-type|network|protocol|security|service|user)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^object-group-search)(\\s+)(access-control)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^pager)(\\s+)(lines)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^password)(\\s+)(encryption)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^password-policy)(\\s+)(authenticate-enable|lifetime|minimum-changes|minimum-length|minimum-lowercase|minimum-numeric|minimum-special|minimum-uppercase|reuse-interval|username-check)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^pim)(\\s+)(accept-register|bsr-candidate|old-register-checksum|rp-address|spt-threshold)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^policy-map)(\\s+)(type)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^prefix-list)(\\s+)(sequence-number)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^privilege)(\\s+)(clear|cmd|configure|level|show)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^prompt)(\\s+)(cluster-unit|context|domain|hostname|management-mode|priority|state)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^quota)(\\s+)(management-session)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^remote-access)(\\s+)(threshold)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^rest-api)(\\s+)(agent|image)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^router)(\\s+)(bgp|eigrp|isis|ospf|rip)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^scansafe)(\\s+)(general-options)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^service)(\\s+)(call-home|internal|password-recovery|resetinbound|resetoutbound|resetoutside)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^sla)(\\s+)(monitor)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^snmp)(\\s+)(cpu|deny|interface)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^snmp-server)(\\s+)(community|contact|enable|group|host|host-group|listen-port|location|user|user-list)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^ssh)(\\s+)(cipher|key-exchange|pubkey-chain|scopy|stricthostkeycheck|timeout|version)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^sysopt)(\\s+)(connection|nodnsalias|noproxyarp|radius|traffic)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^telnet)(\\s+)(timeout)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^terminal)(\\s+)(interactive|monitor|no|pager)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^threat-detection)(\\s+)(basic-threat|rate|scanning-threat|statistics)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^timeout)(\\s+)(conn|conn-holddown|floating-conn|h225|h323|half-closed|icmp|icmp-error|igp|mgcp|mgcp-pat|pat-xlate|sctp|sip|sip-disconnect|sip-invite|sip-provisional-media|sip_media|sunrpc|tcp-proxy-reassembly|uauth|udp|xlate)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^tls-proxy)(\\s+)(maximum-sessions)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^tunnel-group-map)(\\s+)(default-group|enable)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^url-block)(\\s+)(block|url-mempool|url-size)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^url-cache)(\\s+)(dst|src_dst)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^user-identity)(\\s+)(action|ad-agent|default-domain|domain|enable|inactive-user-timer|logout-probe|monitor|poll-import-user-group-timer|user-not-found)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^virtual)(\\s+)(http|telnet)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^vpdn)(\\s+)(group|username)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^vpn)(\\s+)(load-balancing)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^vpn-addr-assign)(\\s+)(aaa|dhcp|local)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^vpn-sessiondb)(\\s+)(max-anyconnect-premium-or-essentials-limit|max-other-vpn-limit)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^vpnsetup)(\\s+)(ipsec-remote-access|l2tp-remote-access|site-to-site|ssl-remote-access)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^vxlan)(\\s+)(port)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^wccp)(\\s+)(interface|web-cache)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^webvpn)(\\s+)(remove)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^xlate)(\\s+)(block-allocation|per-session)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(?<=^zone-labs-integrity)(\\s+)(fail-close|fail-open|fail-timeout|port|server-address|ssl-certificate-port|ssl-client-authentication)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+
+		{ 
+			"match": "(?<=permit)(\\s+)(inter-interface|intra-interface)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(\\s+)(password)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(\\s+)(extended)(?=\\s+(deny|permit))",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(\\s+)(destination)(?=\\s+(dynamic|static))",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+		{
+			"match": "(\\s+)(general-attributes|ipsec-attributes)(?=\\s+)",
+			"name": "string.unquoted.cisco_asa"
+		},
+		{ 
+			"match": "(\\s+)(internal|attributes)(?=\\s+)",
+		  	"name": "string.unquoted.cisco_asa"
+		},
+
+		{ 
+			"match": "^(\\s+)(authentication|bfd|bridge-group|channel-group|cts|ddns|default-group-policy|default|delay|description|dhcp|dhcprelay|duplex|exit|flowcontrol|hello-interval|hold-time|igmp|ip address|ipv6|isis|lacp|mac-address|management-only|mfib|multicast|nameif|nve-only|ospf|pim|policy-route|pppoe|rip|security-level|shutdown|speed|split-horizon|summary-address|vlan|zone-member)(?=\\s+)",
+		  	"name": "constant.character.escape.cisco_asa"
+		},
+		{ 
+			"match": "^(\\s+)(network-object|group-object|service-object|network|service|attribute|description|fqdn|host|subnet)(?=\\s+)",
+		  	"name": "constant.character.escape.cisco_asa"
+		},
+		{
+			"match": "^(\\s+)(range|nat)(?=\\s+)",
+			"name": "constant.character.escape.cisco_asa"
+		},
+		{
+			"match": "^(\\s+)(encryption|group|integrity|lifetime|prf|protocol)(?=\\s+)",
+			"name": "constant.character.escape.cisco_asa"
+		},
+		{
+			"match": "^(\\s+)(address-pools|backup-servers|banner|client-access-rule|client-bypass-protocol|client-firewall|default-domain|dhcp-network-scope|dns-server|gateway-fqdn|group-lock|intercept-dhcp|ip-comp|ip-phone-bypass|ipsec-udp|ipsec-udp-port|ipv6-address-pools|ipv6-split-tunnel-policy|ipv6-vpn-filter|leap-bypass|msie-proxy|nem|password-storage|periodic-authentication|pfs|re-xauth|scep-forwarding-url|secure-unit-authentication|security-group-tag|smartcard-removal-disconnect|split-dns|split-tunnel-all-dns|split-tunnel-network-list|split-tunnel-policy|user-authentication|user-authentication-idle-timeout|vlan|vpn-access-hours|vpn-filter|vpn-idle-timeout|vpn-session-timeout|vpn-simultaneous-logins|vpn-tunnel-protocol|webvpn|wins-server)(?=\\s+)",
+			"name": "constant.character.escape.cisco_asa"
+		},
+		{
+			"match": "^(\\s+)(chain|ikev1|ikev2|isakmp|peer-id-validate)(?=\\s+)",
+			"name": "constant.character.escape.cisco_asa"
+		},
+		
+		{ 
+			"match": "(\\s+)(object-group|object|log|interface|global|no-proxy-arp)(?=\\s+)",
+		  	"name": "support.function.cisco_asa"
+		},
+		{ 
+			"match": "(\\s+)(ah|eigrp|esp|gre|icmp|icmp6|igmp|igrp|ipinip|ipsec|nos|ospf|pcp|pim|pptp|sctp|snp|tcp|udp)(?=\\s+)",
+		  	"name": "support.function.cisco_asa"
+		},
+		{ 
+			"match": "(\\s+)(destination|source)(?=\\s+)",
+		  	"name": "support.function.cisco_asa"
+		},
+
+		{ 
+			"match": "\\d+\\.\\d+\\.\\d+\\.\\d+(/\\d{1,2})?",
+		  	"name": "constant.numeric.cisco_asa"
+		},
+		{ 
+			"match": "[0-9a-fA-F]{0,4}:([0-9a-fA-F]{0,4}:)+[0-9a-fA-F]{0,4}(/\\d{1,3})?",
+		  	"name": "constant.numeric.cisco_asa"
+		}
+	  
+	],
+	"uuid": "f3ba50f0-2bad-48b7-9509-f6d72e353ddb"
+}
