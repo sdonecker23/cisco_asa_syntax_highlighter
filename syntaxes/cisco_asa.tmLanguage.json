@@ -32,7 +32,7 @@
 		},
 		{ 
 			"match": "(?<=motd)(.*)",
-		  	"name": "diabled"
+		  	"name": "disabled"
 		},
 
 		{ 
